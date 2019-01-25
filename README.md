@@ -6,7 +6,7 @@ A lightweight crawler to collect hot spot content of [sina](https://weibo.com/).
 按照如下操作运行LWCrawler：
 
 ```bash
-git cloen https://github.com/duyanghao/LWCrawler.git
+git clone https://github.com/duyanghao/LWCrawler.git
 cd LWCrawler/crawl_sina
 tar -xzf rsa-3.1.1.tar.gz
 export PYTHONPATH=./rsa-3.1.1/build/lib
@@ -160,7 +160,7 @@ http://d.weibo.com/102803?from=page_102803#
 [2019-01-25 11:59:49 ]: progress go to sleep ...
 ```
 
-原始新浪页面：
+对应新浪网页：
 
 ![](https://raw.githubusercontent.com/duyanghao/LWCrawler/master/images/sina_page.png)
 
