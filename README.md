@@ -1,6 +1,19 @@
 # LWCrawler
 A lightweight crawler to collect hot spot content of [sina](https://weibo.com/).
 
+## Run
+
+按照如下操作运行LWCrawler：
+
+```bash
+git cloen https://github.com/duyanghao/LWCrawler.git
+cd LWCrawler/crawl_sina
+tar -xzf rsa-3.1.1.tar.gz
+export PYTHONPATH=./rsa-3.1.1/build/lib
+cd crawl_blog/tools
+bash start.sh
+```
+
 ## Process
 
 ![](https://raw.githubusercontent.com/duyanghao/LWCrawler/master/images/sina_crawler_process.png)
@@ -159,10 +172,16 @@ http://d.weibo.com/102803?from=page_102803#
 
 ### login sina
 
+登录过程，现在还需要手动输入验证码，后续可以自动识别……
+
 ### crawl content
+
+爬取过程现在只是抓取静态网页，无法抓取动态网页且为单进程单线程抓取。可以采用多线程对动态网页并发进行爬取（涉及多线程同步）……
 
 ### parse content 
 
+解析过程现在只是提取微博第一行内容，且有些微博会漏掉，后续可以进行优化，抓取整个微博内容且尽量不遗漏……
+
 ### cluster analysis
 
-## Refs
+聚类算法目前没有实现，可以采用`kmeans`算法对解析的微博内容进行聚类，提取出热点话题……
