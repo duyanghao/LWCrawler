@@ -7,9 +7,9 @@ A lightweight crawler to collect hot spot content of [sina](https://weibo.com/).
 
 As is shown in the picture, the process of LWCrawler is commonly performed following these steps:
 
-* login sina
+### login sina
 
-1. 获取`servertime`, `nonce`, `pubkey`, `rsakv`, `pcid`字段
+* 获取`servertime`, `nonce`, `pubkey`, `rsakv`, `pcid`字段
 
 发送`HTTP GET`请求到如下地址：
 
@@ -23,7 +23,7 @@ http://login.sina.com.cn/sso/prelogin.php?entry=weibo&callback=sinaSSOController
 sinaSSOController.preloginCallBack({"retcode":0,"servertime":1548388758,"pcid":"gz-0ebe667ff54e3d91ef45f17de848f65b11bd","nonce":"M1D973","pubkey":"EB2A38568661887FA180BDDB5CABD5F21C7BFD59C090CB2D245A87AC253062882729293E5506350508E7F9AA3BB77F4333231490F915F6D63C55FE2F08A49B353F444AD3993CACC02DB784ABBB8E42A9B1BBFFFB38BE18D78E87A0E41B9B8F73A928EE0CCEE1F6739884B9777E4FE9E88A1BBE495927AC4A799B3181D6442443","rsakv":"1330428213","exectime":4})
 ```
 
-2. 获取验证码
+* 获取验证码
 
 根据`pcid`字段，发送`HTTP GET`请求到如下地址：
 
@@ -33,11 +33,11 @@ http://login.sina.com.cn/cgi/pin.php?p={gz-0ebe667ff54e3d91ef45f17de848f65b11bd}
 
 获取验证码文件cha.jpg
 
-3. 输入验证码
+* 输入验证码
 
 ![](https://raw.githubusercontent.com/duyanghao/LWCrawler/master/images/cha.jpg)
 
-4. 带信息登录
+* 带信息登录
 
 发送`HTTP POST`请求到如下地址：
 
@@ -57,7 +57,7 @@ http://login.sina.com.cn/sso/login.php?client=ssologin.js(v1.4.11)
 [2019-01-25 11:59:45 ]: POST DATA is nonce=M1D973&pcid=gz-0ebe667ff54e3d91ef45f17de848f65b11bd&savestate=7&from=&service=miniblog&encoding=UTF-8&url=http%3A%2F%2Fweibo.com%2Fajaxlogin.php%3Fframelogin%3D1%26callback%3Dparent.sinaSSOController.feedBackUrlCallBack&servertime=1548388758&sp=5628e54604480ff22f9a92f9f199aa55b756a712c8d64cc15f11488dbf3f106993f964bb1660a88c1b2c8b56883f9e0ae600adec423dd3ff51cec04c2f00c6a9f08e7870edbe213a2dfb4cdb98a2bc875107356001929b267a99e6aa18f3ff604b7809132968294a1f324ca875ef0ea5c374af8404361211e133f8c38d2523c9&vsnval=&door=KE54e&su=Mzc0NjYwMjY3JTQwcXEuY29t&rsakv=1330428213&userticket=1&vsnf=1&returntype=META&entry=weibo&ssosimplelogin=1&gateway=1&prelt=115&pwencode=rsa2
 ```
 
-5. 重定向登录
+* 重定向登录
 
 如果用户、密码、验证码都正确，会有一个重定向报文，这个时候解析出重定向地址，并进行最终登录请求，如下：
 
@@ -86,22 +86,21 @@ http://login.sina.com.cn/sso/login.php?client=ssologin.js(v1.4.11)
 [2019-01-25 11:59:48 ]: login successfully!
 ```
 
-* crawl content
+### crawl content
 
-* parse content
+### parse content
 
-* cluster analysis
+### cluster analysis
 
 ## TODO
 
-* login sina
+### login sina
 
-* crawl content
+### crawl content
 
-* parse content 
+### parse content 
 
-* cluster analysis
+### cluster analysis
 
-
-OA## Refs
+## Refs
 
