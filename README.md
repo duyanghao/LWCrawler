@@ -9,7 +9,7 @@ A lightweight crawler to collect hot spot content of [sina](https://weibo.com/).
 git clone https://github.com/duyanghao/LWCrawler.git
 cd LWCrawler/crawl_sina
 tar -xzf rsa-3.1.1.tar.gz
-export PYTHONPATH=./rsa-3.1.1/build/lib
+export PYTHONPATH=$PWD/rsa-3.1.1/build/lib
 cd crawl_blog/tools
 bash start.sh
 ```
